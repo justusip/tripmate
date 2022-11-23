@@ -1,9 +1,9 @@
 {
     "name": "Tripmate",
     "short_name": "Tripmate",
-    "theme_color": "#000",
-    "background_color": "#000",
-    "display": "fullscreen",
+    "theme_color": "#000000",
+    "background_color": "#000000",
+    "display": "standalone",
     "orientation": "portrait",
     "scope": "/",
     "start_url": "/reels",
