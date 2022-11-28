@@ -20,19 +20,19 @@ export function ReelCard(props: {
         },
         [inViewRef],
     );
-    useEffect(() => {
-        if (inView)
-            ref.current?.play();
-        else
-            ref.current?.pause();
-    }, [inView]);
+    // useEffect(() => {
+    //     if (inView)
+    //         ref.current?.play();
+    //     else
+    //         ref.current?.pause();
+    // }, [inView]);
 
-    const [playing, setPlaying] = useState(false);
 
     return <div
         className={"w-full h-full snap-start flex-1 relative overflow-hidden flex place-items-center place-content-center mb-2"}>
-        <video playsInline muted loop ref={setRefs} preload={"auto"} className={"w-full h-full object-cover"}>
-            <source src={props.post.video} type="video/mp4" onPlay={() => setPlaying(true)}/>
+        <video playsInline muted loop ref={setRefs} autoPlay className={"w-full h-full object-cover"}>
+            <source src={props.post.video} type="video/mp4"/>
+            <source src={props.post.video.replace(".mp4", ".webm")} type="video/webm"/>
         </video>
         <div
             className={"absolute inset-0 bg-gradient-to-t from-black via-transparent p-4 flex flex-col-reverse"}>
